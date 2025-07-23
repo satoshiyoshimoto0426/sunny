@@ -1,0 +1,1754 @@
+/* AI Baccarat Tool v2.0 - Styles */
+
+/* 基本設定*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #422;
+    f50;
+    --warning-col
+    --error-color: #f44336;
+    --background-color: #f5f5f5;
+    --surface-color: #ffffff;
+    --text-primary: #21
+    --text-secondary: #757
+    --border-color: #e0e0e0;
+    .1);
+    --shadow-e;
+}
+
+body {
+    
+    background);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* レスポンシブ設定 */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    vh;
+    display: fle
+    flex-direction: column;
+}
+
+/* ヘッダー */
+.app-header {
+    background: var(--sue-color);
+    
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+    display:lex;
+    justify-content: n;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.app-title {
+    display: flex;
+ nter;
+m;
+    color:lor);
+   
+    font-weight: 700;
+}
+
+.
+: flex;
+    ga0.5rem;
+}
+
+/* ボタン */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+ inter;
+t;
+    font-si
+    font-weig
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transite;
+    text-decoratie;
+}
+
+.btn-primary {
+    background: var(--
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+ine {
+    background: trt;
+    border: 1px soor);
+    color: var(--text-prima
+}
+
+.btn-outline:hover {
+    background: var(--);
+}
+
+.btn-large {
+    padding: 0.75rem 1.5rem;
+ 1rem;
+
+
+.btn-small {
+    padding:
+    font-size: 0.75rem;
+}
+
+/* メインコンテンツ */
+.main-content {
+ x: 1;
+m;
+    display: flex;
+    flex-direction: column;
+ 2rem;
+}
+
+/* 予測セクション */
+.prediction-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+ ;
+}
+
+.prediction-card {
+    background: var(-e-color);
+ x;
+m;
+    box-shadow: var(--ow);
+}
+
+.prediction-header {
+    display: flex;
+    justify-content: space-between
+    align-items: center;
+ em;
+
+
+.prediction-hea2 {
+    color: var(-or);
+}
+
+.
+
+    align-items: center;
+    gap: 0.5rem;
+ m;
+20px;
+    background: #e8f5e8;
+    color: var(--success-color);
+ em;
+}
+
+.prediction-display {
+    text-align: ce
+    margin-bottom: 2rem;
+}
+
+.prediction-value {
+ m;
+0;
+    color: var(--pri
+    margin-bottom:rem;
+}
+
+.prediction-label {
+ 25rem;
+dary);
+    margin-bottom: em;
+}
+
+.confidence-display, .action-dis
+    margin-bottom: rem;
+}
+
+.confidence-label, 
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+ m;
+}
+
+.confidence-level{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+ 
+}
+
+.confidence-bar {
+    width: 200px;
+    height: 8px;
+    background: var(-olor);
+ 
+idden;
+}
+
+.confidence-progress {
+    height: 100%;
+ );
+
+}
+
+.action-recommen{
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+ 
+e-block;
+}
+
+.action-bet {
+    background: #e8f5e8;
+    color: vars-color);
+}
+
+.action-skip {
+    background: #fff3e0;
+ lor);
+}
+
+.prediction-explanation {
+ ;
+
+}
+
+.{
+
+    font-size: 0.m;
+    line-height: 1.5;
+}
+
+ネル */
+.control-panel {
+    background: var(--surface-color
+    border-radius: 8p
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+ 
+ 2rem;
+}
+
+.prediction-controls {
+ ex;
+umn;
+    gap: 1rem;
+}
+
+.
+em;
+    color;
+}
+
+.result-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-result {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2sse;
+}
+
+.btn-result.er {
+    background: #e3f2fd;
+    color: #1976d2;
+ d2;
+}
+
+.btn-result.player {
+ 
+ #7b1fa2;
+    border: 2p2;
+}
+
+..tie {
+ #fff3e0;
+    color: #f57c00;
+    border: 2px solid #f57c00;
+}
+
+.btn-result:hover {
+    transform: translateY(-2px);
+    box-shadow: vvated);
+}
+
+/* 統計セクション */
+.statistics-section {
+ r);
+8px;
+    padding: 2em;
+    box-shadow: var(--shadow);
+}
+
+.ts-grid {
+
+    grid-template-co);
+    gap: 1rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+ 
+d-color);
+    border;
+}
+
+.stat-icon {
+    color: var(--primary-color);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.8;
+    color: var(--text-secon
+}
+
+/* ゲーム履歴 */
+.history-section {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+ : flex;
+;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+
+    display: flex;
+    flex-wrap: wrap;
+ rem;
+}
+
+.history-item {
+    width: 40px;
+    height: 40px;
+ 0%;
+;
+    align-items: ce
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+ 
+}
+
+.history-item.banker {
+    background: #1976d2;
+    color: white;
+}
+
+.history {
+    backgroun #7b1fa2;
+    color: white;
+}
+
+.tie {
+
+    color: white;
+}
+
+.history-item.correct::after {
+    content: '✓';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+ 
+;
+    border-r50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: cenr;
+}
+
+.pty {
+
+    color: var();
+    padding:em;
+ 
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+ : 1000;
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0
+ x);
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    margin: 5% auto;
+ 2rem;
+x;
+    width: 90%;
+    max-width: 500px;
+ ;
+uto;
+    box-shadow: var(--shadted);
+}
+
+.rge {
+800px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+ er;
+m: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1por);
+}
+
+.{
+one;
+    border: none;
+    font-size: 2rem;
+ ointer;
+;
+    paddin
+    widt32px;
+    height: 32px;
+    display: flex;
+    align-items: c;
+    justify-;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+ nter;
+;
+}
+
+/* アルゴリズム選択 */
+.algorithm-grid {
+ grid;
+);
+    gap: 1rem;
+}
+
+.algorithm-card {
+    border: 2px solidr);
+    border-radi 8px;
+    padding: 1.5rem;
+    cursor: pointer;
+ e;
+
+
+.algorithm-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: vashadow);
+}
+
+. {
+r);
+    background: #e2fd;
+}
+
+.
+ex;
+    align-itementer;
+    gap: 0.5rem;
+    margin-bottom
+}
+
+.algorithm-status-dot {
+    width: 8px;
+ x;
+
+    backgroun;
+    margin-left: auto;
+}
+
+.algorithm-stat {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--tdary);
+}
+
+..stat {
+em;
+}
+
+/* パフォーマンス比較 */
+.performance-table {
+    overflow-x: auto;
+}
+
+.performance-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.performance-table t
+.performance-table td {
+ : 1rem;
+eft;
+    border-bottom: 1px so);
+}
+
+.performance-table th {
+ 
+ 600;
+    color: var(--text-primary);
+}
+
+.performance-tabl {
+ 8;
+}
+
+.performance-note {
+    margin-top: 1rem;
+  1rem;
+
+    border-radius: 4px;
+    display: flex;
+    align-items: centr;
+    gap: 0.5rem;
+ ;
+ry);
+}
+
+/* 設定 */
+.settings-content {
+ flex;
+
+    gap: 2rem;
+}
+
+
+    margin-bottom: 1rem;
+    color: var(--ty);
+}
+
+.setting-item {
+    display: flex;
+ en;
+
+    padding: em 0;
+    border-bott
+}
+
+.setting-item:last-child {
+  none;
+}
+
+.setting-item label {
+ ;
+}
+
+.setting-item input[type="checkbox"] {
+ h: 20px;
+x;
+}
+
+.setting-item input[type="number"] {
+ 80px;
+em;
+    border: 1px solid ;
+    border-radius: 4px;
+}
+
+/* ステルスモード */
+.{
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #333;
+ 
+y: flex;
+    align-items: center;
+    justify-content: cen;
+}
+
+.stealth-content {
+    text-align: cente;
+    padding: 2rem;
+}
+
+.stealth-prediction 
+    margin-bottom: 2re
+}
+
+.stealth-value {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.stealth-con
+    font-size:
+    margin-bottom: 2rem;
+}
+
+.stealth-controls {
+    display: flex;
+ m;
+nter;
+    margin-botto
+}
+
+.stealth-btn {
+ 60px;
+0px;
+    border: 1px s333;
+    background: trant;
+    color: #333;
+ 5rem;
+;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.stealth{
+    background: 1;
+    color: #666;
+}
+
+.stealth-exit {
+    font-size: 0.8
+    color: #666;
+    cursor: pointer;
+}
+
+/* 通知 */
+.notifications {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+    background: var(--s;
+    padding: 1rem 1.5rem;
+ 
+);
+    border-left: 4px ;
+    max-width: 300px;
+ ase;
+}
+
+.notification.success {
+ lor);
+}
+
+.notification.warning {
+ ;
+}
+
+.notificat {
+    border-left-color: var(--error-c;
+}
+
+@keyfram{
+    from {
+        transform: 
+     
+  }
+
+        tran);
+        opacity: 1;
+    }
+}
+
+/* フ */
+.app-footer {
+    background: var(--surface-color);
+    b);
+    ing: 2rem;
+    margin-top: aut
+}
+
+.footent {
+    
+    justify-content: spac
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-info p {
+    m;
+}
+
+.disclaimer {
+    f75rem;
+    condary);
+}
+
+.foot {
+    lex;
+    gap: 1rem;
+}
+
+.foo
+    color: var(--prior);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    text-decoration: undrline;
+}
+
+/
+.loading-screen {
+    position: fix
+    top: 0;
+    l: 0;
+    00%;
+    height: 100%;
+    background: var(--surface-cor);
+    dlex;
+    ter;
+    justify-content: c;
+    z-index: 3000;
+}
+
+.t {
+
+}
+
+.loading-spinner {
+ 
+ 60px;
+    border: 4px sol
+    border-top: 4px soli;
+    border-radius: 50%;
+ 
+rem;
+}
+
+@pin {
+
+    100% { transform }
+}
+
+/* レスポンシブデザイン */
+@medi
+    .heatent {
+        padding: 1rem;
+        flex-directn: column;
+     ap: 1rem;
+    }
+  
+    .main-co
+        pa1rem;
+    }
+    
+    .prediction-s
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+ ;
+
+    
+    .algorithm-grid {
+ 
+    }
+    
+    .footer-content {
+      n;
+        text-a center;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+     
+ }
+
+
+@media (max{
+    .stats-grid {
+        gridmns: 1fr;
+    }
+    
+    .result-buttons {
+ m;
+ }
+    
+    .btn-result {
+        padm;
+    }
+    
+    .prediction-value {
+     em;
+    }
+    
+    .stealth-value {
+        font-size: 4rem;
+    }
+    
+    .stealth-controls {
+        flex-dir;
+        align-items: ceer;
+    }
+}
+
+/}  }
+ 1fr;
+  ns:ummplate-colid-te
+        grction {iction-se    .pred
+    
+  }ing: 0;
+     padd     ntent {
+.main-co
+          }
+ 
+ important;lay: none !        disps {
+ation .notificmodal,
+   er,
+    .-foot,
+    .appontrol-panel
+    .cpp-header,    .aint {
+ pr
+@media用スタイル */* プリント
+}
+
+/ 3px;
+    }dth:-widerbor         {
+cardrithm-    .algo
+    
+px;
+    }idth: 2r-w   borde{
+     utline   .btn-o   
+  
+    }
+ 0,0,0,0.3);4px rgba(: 0 2px     --shadow  00;
+  r: #0000der-colo-bor      -ot {
+      :rohigh) {
+s-contrast: dia (prefer/
+@meコントラストモード *}
+}
+
+/* 高;
+    portant01ms !im: 0.durationition-nstra   
+     mportant; 1 !ition-count:teraion-ianimat  nt;
+      s !importaion: 0.01m-durattionima     an
+      * {) {
+ educe: rotions-reduced-mprefermedia ( */
+@ビリティクセシ
+/* ア
+    }
+}
+lor: #999;
+        coround: #111;  backger {
+      th-btn:hov   .steal    
+ 
+
+    }lor: #666;
+        cor: #666;order-colo{
+        blth-btn     .stea   
+  }
+   r: #666;
+   colo000;
+     d: #ckgroun     bamode {
+     .stealth- 
+     }
+   333;
+ 333er-color: #     --bordb3b3;
+   b3ondary: #ext-sec    --tf;
+    fffffimary: #text-pr--
+        e1e;or: #1e1colrface-        --su#121212;
+nd-color: backgrou       --{
+    :root {
+ dark) me: checolor-sfers-remedia (p
+@ダークモード対応 */* /* AI Bacca
+rat Tool v2.0 - Styles */
+
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #424242;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --error-color: #f44336;
+    --background-color: #f5f5f5;
+    --surface-color: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-elevated: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* レスポンシブ設定 */
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+.app-header {
+    background: var(--surface-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* ボタン */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: var(--background-color);
+}
+
+.btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.btn-small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* メインコンテンツ */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* 予測セクション */
+.prediction-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.prediction-card {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.prediction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.prediction-header h2 {
+    color: var(--primary-color);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: #e8f5e8;
+    color: var(--success-color);
+    font-size: 0.875rem;
+}
+
+.prediction-display {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.prediction-value {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.prediction-label {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.confidence-display, .action-display {
+    margin-bottom: 1.5rem;
+}
+
+.confidence-label, .action-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.confidence-level {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.confidence-bar {
+    width: 200px;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.confidence-progress {
+    height: 100%;
+    background: var(--success-color);
+    transition: width 0.3s ease;
+}
+
+.action-recommendation {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.action-bet {
+    background: #e8f5e8;
+    color: var(--success-color);
+}
+
+.action-skip {
+    background: #fff3e0;
+    color: var(--warning-color);
+}
+
+.prediction-explanation {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.explanation-text {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* コントロールパネル */
+.control-panel {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.prediction-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.result-input h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.result-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-result {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-result.banker {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 2px solid #1976d2;
+}
+
+.btn-result.player {
+    background: #f3e5f5;
+    color: #7b1fa2;
+    border: 2px solid #7b1fa2;
+}
+
+.btn-result.tie {
+    background: #fff3e0;
+    color: #f57c00;
+    border: 2px solid #f57c00;
+}
+
+.btn-result:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+}
+
+/* 統計セクション */
+.statistics-section {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border-radius: 8px;
+}
+
+.stat-icon {
+    color: var(--primary-color);
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* ゲーム履歴 */
+.history-section {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.game-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.history-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    position: relative;
+}
+
+.history-item.banker {
+    background: #1976d2;
+    color: white;
+}
+
+.history-item.player {
+    background: #7b1fa2;
+    color: white;
+}
+
+.history-item.tie {
+    background: #f57c00;
+    color: white;
+}
+
+.history-item.correct::after {
+    content: '✓';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--success-color);
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-empty {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem;
+    font-style: italic;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-elevated);
+}
+
+.modal-large {
+    max-width: 800px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* アルゴリズム選択 */
+.algorithm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.algorithm-card {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.algorithm-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.algorithm-card.active {
+    border-color: var(--primary-color);
+    background: #e3f2fd;
+}
+
+.algorithm-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.algorithm-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-color);
+    margin-left: auto;
+}
+
+.algorithm-stats {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.algorithm-stats .stat {
+    margin-bottom: 0.25rem;
+}
+
+/* パフォーマンス比較 */
+.performance-table {
+    overflow-x: auto;
+}
+
+.performance-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.performance-table th,
+.performance-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.performance-table th {
+    background: var(--background-color);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.performance-table tr.recommended {
+    background: #e8f5e8;
+}
+
+.performance-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* 設定 */
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.setting-group h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item label {
+    font-weight: 500;
+}
+
+.setting-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.setting-item input[type="number"] {
+    width: 80px;
+    padding: 0.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* ステルスモード */
+.stealth-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #333;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stealth-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stealth-prediction {
+    margin-bottom: 2rem;
+}
+
+.stealth-value {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.stealth-confidence {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stealth-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.stealth-btn {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #333;
+    background: transparent;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.stealth-btn:hover {
+    background: #111;
+    color: #666;
+}
+
+.stealth-exit {
+    font-size: 0.875rem;
+    color: #666;
+    cursor: pointer;
+}
+
+/* 通知 */
+.notifications {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.notification {
+    background: var(--surface-color);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow-elevated);
+    border-left: 4px solid var(--primary-color);
+    max-width: 300px;
+    animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+    border-left-color: var(--success-color);
+}
+
+.notification.warning {
+    border-left-color: var(--warning-color);
+}
+
+.notification.error {
+    border-left-color: var(--error-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* フッター */
+.app-footer {
+    background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ローディング画面 */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--surface-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 2rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .prediction-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .algorithm-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-buttons {
+        gap: 0.75rem;
+    }
+    
+    .btn-result {
+        padding: 1.25rem;
+    }
+    
+    .prediction-value {
+        font-size: 3rem;
+    }
+    
+    .stealth-value {
+        font-size: 4rem;
+    }
+    
+    .stealth-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
