@@ -4,20 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Baccarat Tool v2.0 - 高度なAI予測システム</title>
-    <meta name="description" content="4つの高度なAIアルゴリズムによるバカラ予測システム。リアルタイムパフォーマンス比較、責任あるゲーミング機能搭載。">
-    <meta name="keywords" content="バカラ,AI,予測,アルゴリズム,ベイジアン,パターン分析,ハイブリッド,クラウド">
-    
-    <!-- PWA設定 -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1976d2">
-    <link rel="apple-touch-icon" href="icon-192.png">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- フォント -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* 基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #212121;
+            line-height: 1.6;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ヘッダー */
+        .app-header {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .app-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1976d2;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* ボタン */
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: #1976d2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1565c0;
+        }
+
+        .btn-large {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* 予測セクション */
+        .prediction-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .prediction-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .prediction-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .prediction-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+
+        .prediction-label {
+            font-size: 1.125rem;
+            color: #757575;
+            margin-bottom: 2rem;
+        }
+
+        /* コントロールパネル */
+        .control-panel {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .result-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .btn-result {
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-result.banker {
+            background: #e3f2fd;
+            color: #1976d2;
+            border: 2px solid #1976d2;
+        }
+
+        .btn-result.player {
+            background: #f3e5f5;
+            color: #7b1fa2;
+            border: 2px solid #7b1fa2;
+        }
+
+        .btn-result.tie {
+            background: #fff3e0;
+            color: #f57c00;
+            border: 2px solid #f57c00;
+        }
+
+        .btn-result:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* 統計セクション */
+        .statistics-section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #212121;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #757575;
+        }
+
+        /* モーダル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .prediction-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 年齢確認モーダル -->
@@ -28,25 +262,7 @@
             <p>あなたは18歳以上ですか？</p>
             <div class="modal-buttons">
                 <button id="ageConfirmYes" class="btn btn-primary">はい（18歳以上）</button>
-                <button id="ageConfirmNo" class="btn btn-secondary">いいえ</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- プライバシー同意モーダル -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <h2>🛡️ プライバシー同意</h2>
-            <p>このアプリケーションは以下のデータを収集・処理します：</p>
-            <ul>
-                <li>ゲーム結果と予測データ（統計分析用）</li>
-                <li>アプリ使用状況（改善目的）</li>
-                <li>匿名化された利用統計</li>
-            </ul>
-            <p>すべてのデータは暗号化され、個人を特定する情報は含まれません。</p>
-            <div class="modal-buttons">
-                <button id="privacyAccept" class="btn btn-primary">同意する</button>
-                <button id="privacyDecline" class="btn btn-secondary">同意しない</button>
+                <button id="ageConfirmNo" class="btn">いいえ</button>
             </div>
         </div>
     </div>
@@ -57,24 +273,8 @@
         <header class="app-header">
             <div class="header-content">
                 <h1 class="app-title">
-                    <span class="material-icons">psychology</span>
-                    AI Baccarat Tool v2.0
+                    🧠 AI Baccarat Tool v2.0
                 </h1>
-                <div class="header-controls">
-                    <button id="algorithmBtn" class="btn btn-outline" title="アルゴリズム選択">
-                        <span class="material-icons">tune</span>
-                        <span id="currentAlgorithm">ハイブリッド</span>
-                    </button>
-                    <button id="performanceBtn" class="btn btn-outline" title="パフォーマンス比較">
-                        <span class="material-icons">analytics</span>
-                    </button>
-                    <button id="settingsBtn" class="btn btn-outline" title="設定">
-                        <span class="material-icons">settings</span>
-                    </button>
-                    <button id="stealthBtn" class="btn btn-outline" title="ステルスモード">
-                        <span class="material-icons">visibility_off</span>
-                    </button>
-                </div>
             </div>
         </header>
 
@@ -83,364 +283,202 @@
             <!-- 予測セクション -->
             <section class="prediction-section">
                 <div class="prediction-card">
-                    <div class="prediction-header">
-                        <h2>🔮 次回予測</h2>
-                        <div class="algorithm-status">
-                            <span id="algorithmStatus" class="status-indicator active">
-                                <span class="material-icons">check_circle</span>
-                                <span id="algorithmName">ハイブリッド</span>
-                            </span>
-                        </div>
-                    </div>
+                    <h2>🔮 次回予測</h2>
                     
                     <div class="prediction-display">
-                        <div class="prediction-result">
-                            <div id="predictionValue" class="prediction-value">-</div>
-                            <div id="predictionLabel" class="prediction-label">予測を生成してください</div>
-                        </div>
-                        
-                        <div class="confidence-display">
-                            <div class="confidence-label">信頼度</div>
-                            <div id="confidenceLevel" class="confidence-level">
-                                <div class="confidence-bar">
-                                    <div id="confidenceProgress" class="confidence-progress"></div>
-                                </div>
-                                <span id="confidenceText">-</span>
-                            </div>
-                        </div>
-                        
-                        <div class="action-display">
-                            <div class="action-label">推奨アクション</div>
-                            <div id="actionRecommendation" class="action-recommendation">-</div>
-                        </div>
+                        <div class="prediction-value" id="predictionValue">-</div>
+                        <div class="prediction-label" id="predictionLabel">予測を生成してください</div>
                     </div>
 
-                    <div class="prediction-explanation">
-                        <h4>予測根拠</h4>
-                        <div id="predictionExplanation" class="explanation-text">
-                            予測を生成すると、AIの判断根拠が表示されます。
-                        </div>
-                    </div>
+                    <button id="newPredictionBtn" class="btn btn-primary btn-large">
+                        ✨ 新しい予測
+                    </button>
                 </div>
 
-                <!-- 予測生成・結果入力 -->
+                <!-- コントロールパネル -->
                 <div class="control-panel">
-                    <div class="prediction-controls">
-                        <button id="newPredictionBtn" class="btn btn-primary btn-large">
-                            <span class="material-icons">auto_awesome</span>
-                            新しい予測
+                    <h3>実際の結果を入力</h3>
+                    <div class="result-buttons">
+                        <button class="btn-result banker" data-result="BANKER">
+                            🏦 BANKER
                         </button>
-                        <button id="newShoeBtn" class="btn btn-secondary">
-                            <span class="material-icons">refresh</span>
-                            新しいシュー
+                        <button class="btn-result player" data-result="PLAYER">
+                            👤 PLAYER
                         </button>
-                    </div>
-
-                    <div class="result-input">
-                        <h3>実際の結果を入力</h3>
-                        <div class="result-buttons">
-                            <button id="bankerBtn" class="btn btn-result banker" data-result="BANKER">
-                                <span class="material-icons">account_balance</span>
-                                BANKER
-                            </button>
-                            <button id="playerBtn" class="btn btn-result player" data-result="PLAYER">
-                                <span class="material-icons">person</span>
-                                PLAYER
-                            </button>
-                            <button id="tieBtn" class="btn btn-result tie" data-result="TIE">
-                                <span class="material-icons">handshake</span>
-                                TIE
-                            </button>
-                        </div>
+                        <button class="btn-result tie" data-result="TIE">
+                            🤝 TIE
+                        </button>
                     </div>
                 </div>
             </section>
 
             <!-- 統計セクション -->
             <section class="statistics-section">
+                <h3>📊 統計情報</h3>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">trending_up</span>
-                        </div>
-                        <div class="stat-content">
+                        <div>
                             <div class="stat-value" id="accuracyRate">-</div>
                             <div class="stat-label">予測精度</div>
                         </div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">casino</span>
-                        </div>
-                        <div class="stat-content">
+                        <div>
                             <div class="stat-value" id="totalGames">0</div>
                             <div class="stat-label">総ゲーム数</div>
                         </div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">timeline</span>
-                        </div>
-                        <div class="stat-content">
+                        <div>
                             <div class="stat-value" id="currentStreak">0</div>
                             <div class="stat-label">連続的中</div>
                         </div>
                     </div>
                     
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">account_balance_wallet</span>
-                        </div>
-                        <div class="stat-content">
+                        <div>
                             <div class="stat-value" id="theoreticalReturn">-</div>
                             <div class="stat-label">理論収益率</div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- ゲーム履歴 -->
-            <section class="history-section">
-                <div class="section-header">
-                    <h3>📊 ゲーム履歴</h3>
-                    <button id="clearHistoryBtn" class="btn btn-outline btn-small">
-                        <span class="material-icons">clear_all</span>
-                        履歴をクリア
-                    </button>
-                </div>
-                <div id="gameHistory" class="game-history">
-                    <div class="history-empty">
-                        ゲーム結果を入力すると履歴が表示されます
-                    </div>
-                </div>
-            </section>
         </main>
-
-        <!-- アルゴリズム選択モーダル -->
-        <div id="algorithmModal" class="modal">
-            <div class="modal-content modal-large">
-                <div class="modal-header">
-                    <h2>🧠 アルゴリズム選択</h2>
-                    <button class="modal-close">&times;</button>
-                </div>
-                <div class="algorithm-grid">
-                    <div class="algorithm-card" data-algorithm="bayesian">
-                        <div class="algorithm-header">
-                            <span class="material-icons">calculate</span>
-                            <h3>ベイジアン推論</h3>
-                            <div class="algorithm-status-dot active"></div>
-                        </div>
-                        <p>カード構成に基づく確率計算</p>
-                        <div class="algorithm-stats">
-                            <div class="stat">精度: <span class="bayesian-accuracy">54.2%</span></div>
-                            <div class="stat">適用場面: シュー序盤</div>
-                        </div>
-                    </div>
-                    
-                    <div class="algorithm-card" data-algorithm="pattern">
-                        <div class="algorithm-header">
-                            <span class="material-icons">pattern</span>
-                            <h3>パターン分析</h3>
-                            <div class="algorithm-status-dot active"></div>
-                        </div>
-                        <p>ゲーム履歴のパターン検出</p>
-                        <div class="algorithm-stats">
-                            <div class="stat">精度: <span class="pattern-accuracy">56.8%</span></div>
-                            <div class="stat">適用場面: トレンド発生時</div>
-                        </div>
-                    </div>
-                    
-                    <div class="algorithm-card active" data-algorithm="hybrid">
-                        <div class="algorithm-header">
-                            <span class="material-icons">auto_awesome</span>
-                            <h3>ハイブリッド</h3>
-                            <div class="algorithm-status-dot active"></div>
-                        </div>
-                        <p>複数手法の統合による安定性</p>
-                        <div class="algorithm-stats">
-                            <div class="stat">精度: <span class="hybrid-accuracy">57.1%</span></div>
-                            <div class="stat">適用場面: 全般（推奨）</div>
-                        </div>
-                    </div>
-                    
-                    <div class="algorithm-card" data-algorithm="cloud">
-                        <div class="algorithm-header">
-                            <span class="material-icons">cloud</span>
-                            <h3>クラウド強化</h3>
-                            <div class="algorithm-status-dot active"></div>
-                        </div>
-                        <p>最新AI技術による高精度予測</p>
-                        <div class="algorithm-stats">
-                            <div class="stat">精度: <span class="cloud-accuracy">58.9%</span></div>
-                            <div class="stat">適用場面: 最高精度が必要な時</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- パフォーマンス比較モーダル -->
-        <div id="performanceModal" class="modal">
-            <div class="modal-content modal-large">
-                <div class="modal-header">
-                    <h2>📈 パフォーマンス比較</h2>
-                    <button class="modal-close">&times;</button>
-                </div>
-                <div class="performance-content">
-                    <div class="performance-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>アルゴリズム</th>
-                                    <th>精度率</th>
-                                    <th>勝率</th>
-                                    <th>理論収益率</th>
-                                    <th>ランク</th>
-                                </tr>
-                            </thead>
-                            <tbody id="performanceTableBody">
-                                <tr class="recommended">
-                                    <td><span class="material-icons">star</span> クラウド強化</td>
-                                    <td>58.9%</td>
-                                    <td>61.2%</td>
-                                    <td>+12.3%</td>
-                                    <td>1位</td>
-                                </tr>
-                                <tr>
-                                    <td>ハイブリッド</td>
-                                    <td>57.1%</td>
-                                    <td>59.8%</td>
-                                    <td>+8.7%</td>
-                                    <td>2位</td>
-                                </tr>
-                                <tr>
-                                    <td>パターン分析</td>
-                                    <td>56.8%</td>
-                                    <td>58.4%</td>
-                                    <td>+6.2%</td>
-                                    <td>3位</td>
-                                </tr>
-                                <tr>
-                                    <td>ベイジアン推論</td>
-                                    <td>54.2%</td>
-                                    <td>56.1%</td>
-                                    <td>+3.8%</td>
-                                    <td>4位</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="performance-note">
-                        <p><span class="material-icons">info</span> 直近50ゲームのデータに基づく比較結果です。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 設定モーダル -->
-        <div id="settingsModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>⚙️ 設定</h2>
-                    <button class="modal-close">&times;</button>
-                </div>
-                <div class="settings-content">
-                    <div class="setting-group">
-                        <h3>🎮 ゲーム設定</h3>
-                        <div class="setting-item">
-                            <label>自動予測生成</label>
-                            <input type="checkbox" id="autoPrediction" checked>
-                        </div>
-                        <div class="setting-item">
-                            <label>音声フィードバック</label>
-                            <input type="checkbox" id="soundFeedback">
-                        </div>
-                    </div>
-                    
-                    <div class="setting-group">
-                        <h3>🛡️ 責任あるゲーミング</h3>
-                        <div class="setting-item">
-                            <label>セッション時間制限 (分)</label>
-                            <input type="number" id="sessionLimit" value="120" min="30" max="480">
-                        </div>
-                        <div class="setting-item">
-                            <label>休憩リマインダー</label>
-                            <input type="checkbox" id="breakReminder" checked>
-                        </div>
-                        <div class="setting-item">
-                            <button id="selfExclusionBtn" class="btn btn-warning">
-                                <span class="material-icons">block</span>
-                                自己排除設定
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="setting-group">
-                        <h3>📊 データ・プライバシー</h3>
-                        <div class="setting-item">
-                            <button id="exportDataBtn" class="btn btn-outline">
-                                <span class="material-icons">download</span>
-                                データエクスポート
-                            </button>
-                        </div>
-                        <div class="setting-item">
-                            <button id="clearDataBtn" class="btn btn-outline">
-                                <span class="material-icons">delete</span>
-                                全データ削除
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ステルスモード -->
-        <div id="stealthMode" class="stealth-mode" style="display: none;">
-            <div class="stealth-content">
-                <div class="stealth-prediction">
-                    <div id="stealthPrediction" class="stealth-value">-</div>
-                    <div id="stealthConfidence" class="stealth-confidence">●●●</div>
-                </div>
-                <div class="stealth-controls">
-                    <button class="stealth-btn" data-result="BANKER">B</button>
-                    <button class="stealth-btn" data-result="PLAYER">P</button>
-                    <button class="stealth-btn" data-result="TIE">T</button>
-                </div>
-                <div class="stealth-exit" onclick="exitStealthMode()">タップで通常モードに戻る</div>
-            </div>
-        </div>
-
-        <!-- 通知エリア -->
-        <div id="notifications" class="notifications"></div>
-
-        <!-- フッター -->
-        <footer class="app-footer">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>AI Baccarat Tool v2.0 - 責任を持ってお楽しみください</p>
-                    <p class="disclaimer">このツールは予測支援を目的としており、確実な利益を保証するものではありません。</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#" onclick="showManual()">取扱説明書</a>
-                    <a href="#" onclick="showStrategy()">勝利戦略</a>
-                    <a href="#" onclick="showSupport()">サポート</a>
-                </div>
-            </div>
-        </footer>
     </div>
 
-    <!-- ローディング画面 -->
-    <div id="loading" class="loading-screen">
-        <div class="loading-content">
-            <div class="loading-spinner"></div>
-            <h2>AI Baccarat Tool v2.0</h2>
-            <p>高度なAIシステムを初期化中...</p>
-        </div>
-    </div>
+    <script>
+        // アプリケーションの状態
+        let gameState = {
+            predictions: [],
+            results: [],
+            currentPrediction: null,
+            stats: {
+                totalGames: 0,
+                correctPredictions: 0,
+                currentStreak: 0,
+                maxStreak: 0
+            }
+        };
 
-    <!-- JavaScript -->
-    <script src="app.js"></script>
+        // 年齢確認
+        document.getElementById('ageConfirmYes').addEventListener('click', function() {
+            document.getElementById('ageVerificationModal').style.display = 'none';
+            document.getElementById('app').style.display = 'flex';
+        });
+
+        document.getElementById('ageConfirmNo').addEventListener('click', function() {
+            alert('18歳未満の方はご利用いただけません。');
+        });
+
+        // 予測生成
+        document.getElementById('newPredictionBtn').addEventListener('click', function() {
+            generatePrediction();
+        });
+
+        // 結果入力
+        document.querySelectorAll('.btn-result').forEach(button => {
+            button.addEventListener('click', function() {
+                const result = this.getAttribute('data-result');
+                recordResult(result);
+            });
+        });
+
+        // 予測生成関数
+        function generatePrediction() {
+            const predictions = ['BANKER', 'PLAYER', 'TIE'];
+            const weights = [0.45, 0.44, 0.11]; // バカラの実際の確率に近似
+            
+            const randomValue = Math.random();
+            let prediction;
+            
+            if (randomValue < weights[0]) {
+                prediction = predictions[0];
+            } else if (randomValue < weights[0] + weights[1]) {
+                prediction = predictions[1];
+            } else {
+                prediction = predictions[2];
+            }
+            
+            gameState.currentPrediction = prediction;
+            
+            // UI更新
+            document.getElementById('predictionValue').textContent = prediction;
+            document.getElementById('predictionLabel').textContent = 'AI予測結果';
+            
+            // 予測を記録
+            gameState.predictions.push({
+                prediction: prediction,
+                timestamp: new Date(),
+                confidence: Math.random() * 0.3 + 0.6 // 60-90%の信頼度
+            });
+        }
+
+        // 結果記録関数
+        function recordResult(actualResult) {
+            if (!gameState.currentPrediction) {
+                alert('まず予測を生成してください。');
+                return;
+            }
+            
+            const isCorrect = gameState.currentPrediction === actualResult;
+            
+            // 結果を記録
+            gameState.results.push({
+                prediction: gameState.currentPrediction,
+                actual: actualResult,
+                correct: isCorrect,
+                timestamp: new Date()
+            });
+            
+            // 統計更新
+            gameState.stats.totalGames++;
+            if (isCorrect) {
+                gameState.stats.correctPredictions++;
+                gameState.stats.currentStreak++;
+                gameState.stats.maxStreak = Math.max(gameState.stats.maxStreak, gameState.stats.currentStreak);
+            } else {
+                gameState.stats.currentStreak = 0;
+            }
+            
+            // UI更新
+            updateStatistics();
+            
+            // 次の予測のためにリセット
+            gameState.currentPrediction = null;
+            document.getElementById('predictionValue').textContent = '-';
+            document.getElementById('predictionLabel').textContent = '予測を生成してください';
+            
+            // フィードバック
+            if (isCorrect) {
+                alert('🎉 予測的中！');
+            } else {
+                alert('❌ 予測外れ');
+            }
+        }
+
+        // 統計更新関数
+        function updateStatistics() {
+            const accuracy = gameState.stats.totalGames > 0 
+                ? (gameState.stats.correctPredictions / gameState.stats.totalGames * 100).toFixed(1) + '%'
+                : '-';
+            
+            const theoreticalReturn = gameState.stats.totalGames > 0
+                ? ((gameState.stats.correctPredictions * 1.95 - gameState.stats.totalGames) / gameState.stats.totalGames * 100).toFixed(1) + '%'
+                : '-';
+            
+            document.getElementById('accuracyRate').textContent = accuracy;
+            document.getElementById('totalGames').textContent = gameState.stats.totalGames;
+            document.getElementById('currentStreak').textContent = gameState.stats.currentStreak;
+            document.getElementById('theoreticalReturn').textContent = theoreticalReturn;
+        }
+
+        // 初期化
+        window.addEventListener('load', function() {
+            document.getElementById('ageVerificationModal').style.display = 'block';
+            updateStatistics();
+        });
+    </script>
 </body>
 </html>
